@@ -2,8 +2,6 @@ import PropTypes from 'prop-types'
 import '../styles/toggle-switch.scss'
 
 const ToggleSwitch = ({ click }) => {
-
-
     return (
         <div>
             <label className="switch">

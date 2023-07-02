@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import ToggleSwitch from './components/ToggleSwitch'
-import Tracker from './components/Tracker'
-import { Movie } from './components/Movie'
+import { BrowserRouter, Link, Route } from 'react-router-dom'
+import Movies from './pages/Movies'
 import './App.css'
 
 function App() {
@@ -16,20 +16,33 @@ function App() {
 
     const backgroundColor = isLightMode ? light : dark
     const textColor = isLightMode ? dark : light
-    const borderColor = isLightMode ? dark : light
+    // const borderColor = isLightMode ? dark : light
+
+    const linkStyles = {
+        backgroundColor,
+        textColor,
+    }
 
     return (
-        <main style={{ backgroundColor, color: textColor }}>
-            <header>
-                <ToggleSwitch click={changeTheme} />
-                <Tracker
-                    style={{ backgroundColor, borderColor, color: textColor }}
-                />
-            </header>
-            <section>
-                <Movie />
-            </section>
-        </main>
+        <BrowserRouter>
+            <main style={{ backgroundColor, color: textColor }}>
+                <header>
+                    <ToggleSwitch click={changeTheme} />
+                </header>
+                <section>
+                    <ul>
+                        <li>
+                            <Link to="./pages/Movies.jsx" style={linkStyles}>
+                                Movies
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="#">Series</Link>
+                        </li>
+                    </ul>
+                </section>
+            </main>
+        </BrowserRouter>
     )
 }
 

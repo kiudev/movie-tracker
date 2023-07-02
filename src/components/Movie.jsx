@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import '../styles/movie.scss'
 
 export const Movie = () => {
     const [movie, setMovie] = useState([])
@@ -22,12 +23,18 @@ export const Movie = () => {
 
     return (
         <div>
-            <h1>Movies</h1>
-            <ul>
+            <section>
                 {movie.map(data => (
-                    <li key={data.id}>{data.original_title}</li>
+                    <img
+                        key={data.id}
+                        src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+                        alt={data.title}
+                    />
                 ))}
-            </ul>
+                {/* {movie.map(data => (
+                    <li key={data.id}>{data.title}</li>
+                ))} */}
+            </section>
         </div>
     )
 }
