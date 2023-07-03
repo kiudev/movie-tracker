@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import ToggleSwitch from './components/ToggleSwitch'
-import { BrowserRouter, Link, Route } from 'react-router-dom'
-import Movies from './pages/Movies'
+import { Movie } from './components/Movie'
+import Nav from './components/Nav'
 import './App.css'
 
 function App() {
@@ -17,32 +17,19 @@ function App() {
     const backgroundColor = isLightMode ? light : dark
     const textColor = isLightMode ? dark : light
     // const borderColor = isLightMode ? dark : light
-
-    const linkStyles = {
-        backgroundColor,
-        textColor,
-    }
+    const borderColorButton = isLightMode ? dark : light
+    const txtColorButton = isLightMode ? dark : light
 
     return (
-        <BrowserRouter>
-            <main style={{ backgroundColor, color: textColor }}>
-                <header>
-                    <ToggleSwitch click={changeTheme} />
-                </header>
-                <section>
-                    <ul>
-                        <li>
-                            <Link to="./pages/Movies.jsx" style={linkStyles}>
-                                Movies
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="#">Series</Link>
-                        </li>
-                    </ul>
-                </section>
-            </main>
-        </BrowserRouter>
+        <div style={{ backgroundColor, color: textColor }}>
+            <header>
+                <Nav style={{backgroundColor, border: '1px solid', borderColor: borderColorButton, color: txtColorButton }} />
+                <ToggleSwitch click={changeTheme} />
+            </header>
+            <section>
+                <Movie />
+            </section>
+        </div>
     )
 }
 

@@ -1,5 +1,10 @@
-img {
-    width: 10vw;
-    display: flex;
+section {
+    display: block;
+    flex-direction: row;
+    
+    img {
+        width: 10vw;
+    }
 }
+
 

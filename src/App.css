@@ -1,25 +1,19 @@
 #root {
-    text-align: center;
-}
-
-main {
-    min-width: 100vw;
-    min-height: 100vh;
     display: grid;
     justify-content: center;
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
 header {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
+    align-items: center;
 }
 
-ul {
-    display: flex;
-    list-style: none;
-    button {
-        padding: 20px;
-        margin-top: 20px;
-    }
+section {
+    margin-top: 5ch;
 }
 
 

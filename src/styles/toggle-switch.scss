@@ -5,14 +5,15 @@
   --bg-color: #181818;
   --bg-color-alt: #666;
   --main-color: #cecece;
-  position: relative;
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
   width: 50px;
   height: 20px;
+  top: 8px;
+  left: 50px;
 }
 
 .toggle {
