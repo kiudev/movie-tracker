@@ -54,7 +54,7 @@ function App() {
                     <nav>
                         <ul>
                             <li>
-                                <Link to="/popular">
+                                <Link to="/">
                                     <span
                                         style={{
                                             color: hoverPopular
@@ -90,7 +90,7 @@ function App() {
                     <ToggleSwitch click={changeTheme} />
                 </header>
                 <Routes>
-                    <Route path="/popular" Component={Popular} />
+                    <Route path="/" Component={Popular} />
                     <Route path="/current" Component={Current} />
                 </Routes>
             </div>
