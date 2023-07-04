@@ -8,14 +8,25 @@
 header {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
     align-items: center;
+    margin-top: 10px;
 }
 
 section {
     margin-top: 5ch;
 }
 
+nav ul li {
+    display: inline-flex;
+    list-style: none;
+    margin-right: 2rem;
+}
 
+.value {
+    font-size: 30px;
+    color: #298096;
+}
 
-
+/* .value:hover {
+    color: #EEEEEE;
+} */

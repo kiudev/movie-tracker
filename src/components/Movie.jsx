@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import '../styles/movie.scss'
 
-export const Movie = () => {
+const Movie = () => {
     const [movie, setMovie] = useState([])
 
     useEffect(() => {
@@ -38,3 +38,5 @@ export const Movie = () => {
         </div>
     )
 }
+
+export default Movie
