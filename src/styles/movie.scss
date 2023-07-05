@@ -1,10 +1,25 @@
+$lightBlue: '#348ca2';
+
 section {
-    display: block;
-    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin-top: 2ch;
     
     img {
-        width: 10vw;
+        width: 12vw;
+        border-radius: 20px;
+        transition: all 0.2s ease-in-out;
     }
+
+    img:hover {
+        transform: 
+        perspective(350px)
+        rotateX(8deg)
+        translateY(-5%)
+        translateZ(0);
+    }
+
 }
 
 

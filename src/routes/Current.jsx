@@ -1,5 +1,11 @@
+import CurrentMovie from '../components/CurrentMovie'
+
 const Current = () => {
-    return <div></div>
+    return (
+        <div>
+            <CurrentMovie />
+        </div>
+    )
 }
 
 export default Current

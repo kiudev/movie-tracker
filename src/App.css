@@ -1,8 +1,6 @@
 #root {
     display: grid;
     justify-content: center;
-    min-height: 100vh;
-    min-width: 100vw;
 }
 
 header {
@@ -10,10 +8,6 @@ header {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
-}
-
-section {
-    margin-top: 5ch;
 }
 
 nav ul li {
@@ -24,7 +18,6 @@ nav ul li {
 
 .value {
     font-size: 30px;
-    color: #298096;
 }
 
 /* .value:hover {

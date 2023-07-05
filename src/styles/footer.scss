@@ -1,0 +1,13 @@
+footer {
+    text-align: center;
+    font-size: 25px;
+   left: 0;
+   bottom: 0;
+}
+
+@media (max-width: 760px) {
+    footer {
+        position: relative;
+        margin-top: 40px;
+    }
+}

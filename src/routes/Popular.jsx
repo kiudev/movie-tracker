@@ -1,11 +1,9 @@
-import Movie from '../components/Movie'
+import PopularMovie from '../components/PopularMovie'
 
 const Popular = () => {
     return (
         <div>
-            <section>
-                <Movie />
-            </section>
+            <PopularMovie />
         </div>
     )
 }
