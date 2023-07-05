@@ -3,6 +3,7 @@ import '../styles/movie.scss'
 
 const UpcomingMovie = () => {
     const [movie, setMovie] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         const fetchMovies = async () => {
@@ -19,14 +20,27 @@ const UpcomingMovie = () => {
                 console.error(error)
             }
         }
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 200)
         fetchMovies()
     }, [])
-
+    
     // Rows
     const upcomingFirstRow = movie.slice(0, 4)
     const upcomingSecondRow = movie.slice(5, 9)
     const upcomingThirdRow = movie.slice(10, 14)
     const upcomingFourthRow = movie.slice(15, 19)
+    
+    if (isLoading) {
+        return (
+            <div>
+                <div className="loader-wrapper">
+                    <div className="loader"></div>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div>

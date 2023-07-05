@@ -3,6 +3,7 @@ import '../styles/movie.scss'
 
 const PopularMovie = () => {
     const [movie, setMovie] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         const fetchMovies = async () => {
@@ -16,9 +17,13 @@ const PopularMovie = () => {
                 const movieData = data.results
                 setMovie(movieData)
             } catch (error) {
+                setIsLoading(false)
                 console.error(error)
             }
         }
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 200)
         fetchMovies()
     }, [])
 
@@ -27,6 +32,16 @@ const PopularMovie = () => {
     const popularSecondRow = movie.slice(5, 9)
     const popularThirdRow = movie.slice(10, 14)
     const popularFourthRow = movie.slice(15, 19)
+
+    if (isLoading) {
+        return (
+            <div>
+                <div className="loader-wrapper">
+                    <div className="loader"></div>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div>

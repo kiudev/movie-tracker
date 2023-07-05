@@ -3,6 +3,7 @@ import '../styles/movie.scss'
 
 const TopRatedMovie = () => {
     const [movie, setMovie] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         const fetchMovies = async () => {
@@ -19,6 +20,9 @@ const TopRatedMovie = () => {
                 console.error(error)
             }
         }
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 200)
         fetchMovies()
     }, [])
 
@@ -27,6 +31,16 @@ const TopRatedMovie = () => {
     const ratedSecondRow = movie.slice(5, 9)
     const ratedThirdRow = movie.slice(10, 14)
     const ratedFourthRow = movie.slice(15, 19)
+
+    if (isLoading) {
+        return (
+            <div>
+                <div className="loader-wrapper">
+                    <div className="loader"></div>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div>
