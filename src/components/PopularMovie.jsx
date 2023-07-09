@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import '../styles/movie.scss'
 
-const PopularMovie = () => {
+const PopularMovie = ({ onMovieClick }) => {
     const [movie, setMovie] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
@@ -46,12 +47,13 @@ const PopularMovie = () => {
     return (
         <div>
             <section>
-                {popularFirstRow.map(data => (
-                    <img
-                        key={data.id}
-                        src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-                        alt={data.title}
-                    />
+                {popularFirstRow.map(data => (  
+                    <div key={data.id} onClick={() => onMovieClick(movie)}>
+                        <img
+                            src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+                            alt={data.title}
+                        />
+                    </div>
                 ))}
             </section>
             <section>
@@ -83,6 +85,10 @@ const PopularMovie = () => {
             </section>
         </div>
     )
+}
+
+PopularMovie.propTypes = {
+    onMovieClick: PropTypes.func,
 }
 
 export default PopularMovie
