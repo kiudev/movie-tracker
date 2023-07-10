@@ -28,9 +28,10 @@ const TopRatedMovie = () => {
 
     // Rows
     const ratedFirstRow = movie.slice(0, 4)
-    const ratedSecondRow = movie.slice(5, 9)
-    const ratedThirdRow = movie.slice(10, 14)
-    const ratedFourthRow = movie.slice(15, 19)
+    const ratedSecondRow = movie.slice(4, 8)
+    const ratedThirdRow = movie.slice(8, 12)
+    const ratedFourthRow = movie.slice(12, 16)
+    const ratedFifthRow = movie.slice(16, 20)
 
     if (isLoading) {
         return (
@@ -46,38 +47,127 @@ const TopRatedMovie = () => {
         <div>
             <section>
                 {ratedFirstRow.map(data => (
-                    <img
-                        key={data.id}
-                        src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-                        alt={data.title}
-                    />
+                    <div key={data.id}>
+                        <div className="info">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="3em"
+                                height="3em"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    fillRule="evenodd"
+                                    d="M12 16.667L5 22l3-8l-6-4.5h7.5L12 2l2.5 7.5H22L16 14l3 8z"
+                                ></path>
+                            </svg>
+                            <p className="vote">{`${data.vote_average} (${data.vote_count})`}</p>
+                        </div>
+                        <img
+                            src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+                            alt={data.title}
+                        />
+                    </div>
                 ))}
             </section>
             <section>
                 {ratedSecondRow.map(data => (
-                    <img
-                        key={data.id}
-                        src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-                        alt={data.title}
-                    />
+                    <div key={data.id}>
+                        <div className="info">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="3em"
+                                height="3em"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    fillRule="evenodd"
+                                    d="M12 16.667L5 22l3-8l-6-4.5h7.5L12 2l2.5 7.5H22L16 14l3 8z"
+                                ></path>
+                            </svg>
+                            <p className="vote">{`${data.vote_average} (${data.vote_count})`}</p>
+                        </div>
+                        <img
+                            src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+                            alt={data.title}
+                        />
+                    </div>
                 ))}
             </section>
             <section>
                 {ratedThirdRow.map(data => (
-                    <img
-                        key={data.id}
-                        src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-                        alt={data.title}
-                    />
+                    <div key={data.id}>
+                        <div className="info">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="3em"
+                                height="3em"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    fillRule="evenodd"
+                                    d="M12 16.667L5 22l3-8l-6-4.5h7.5L12 2l2.5 7.5H22L16 14l3 8z"
+                                ></path>
+                            </svg>
+                            <p className="vote">{`${data.vote_average} (${data.vote_count})`}</p>
+                        </div>
+                        <img
+                            src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+                            alt={data.title}
+                        />
+                    </div>
                 ))}
             </section>
             <section>
                 {ratedFourthRow.map(data => (
-                    <img
-                        key={data.id}
-                        src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-                        alt={data.title}
-                    />
+                    <div key={data.id}>
+                        <div className="info">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="3em"
+                                height="3em"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    fillRule="evenodd"
+                                    d="M12 16.667L5 22l3-8l-6-4.5h7.5L12 2l2.5 7.5H22L16 14l3 8z"
+                                ></path>
+                            </svg>
+                            <p className="vote">{`${data.vote_average} (${data.vote_count})`}</p>
+                        </div>
+                        <img
+                            src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+                            alt={data.title}
+                        />
+                    </div>
+                ))}
+            </section>
+            <section>
+                {ratedFifthRow.map(data => (
+                    <div key={data.id}>
+                        <div className="info">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="3em"
+                                height="3em"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    fillRule="evenodd"
+                                    d="M12 16.667L5 22l3-8l-6-4.5h7.5L12 2l2.5 7.5H22L16 14l3 8z"
+                                ></path>
+                            </svg>
+                            <p className="vote">{`${data.vote_average} (${data.vote_count})`}</p>
+                        </div>
+                        <img
+                            src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+                            alt={data.title}
+                        />
+                    </div>
                 ))}
             </section>
         </div>

@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react'
 import '../styles/movie.scss'
 
 const MovieDetail = () => {
-
     const [movie, setMovie] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         const fetchMovies = async () => {
@@ -17,14 +17,32 @@ const MovieDetail = () => {
                 const movieData = data.results
                 setMovie(movieData)
             } catch (error) {
+                setIsLoading(false)
                 console.error(error)
             }
         }
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 200)
         fetchMovies()
     }, [])
 
+    if (isLoading) {
+        return (
+            <div>
+                <div className="loader-wrapper">
+                    <div className="loader"></div>
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div>
+            <img
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                alt={movie[0].title}
+            />
             <h1>{movie.title}</h1>
             <h2>{movie.description}</h2>
         </div>

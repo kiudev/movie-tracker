@@ -30,9 +30,10 @@ const PopularMovie = ({ onMovieClick }) => {
 
     // Rows
     const popularFirstRow = movie.slice(0, 4)
-    const popularSecondRow = movie.slice(5, 9)
-    const popularThirdRow = movie.slice(10, 14)
-    const popularFourthRow = movie.slice(15, 19)
+    const popularSecondRow = movie.slice(4, 8)
+    const popularThirdRow = movie.slice(8, 12)
+    const popularFourthRow = movie.slice(12, 16)
+    const popularFifthRow = movie.slice(16, 20)
 
     if (isLoading) {
         return (
@@ -47,40 +48,133 @@ const PopularMovie = ({ onMovieClick }) => {
     return (
         <div>
             <section>
-                {popularFirstRow.map(data => (  
+                {popularFirstRow.map(data => (
                     <div key={data.id} onClick={() => onMovieClick(movie)}>
+                        <div className='info'>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="3em"
+                                height="3em"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    fillRule="evenodd"
+                                    d="M12 16.667L5 22l3-8l-6-4.5h7.5L12 2l2.5 7.5H22L16 14l3 8z"
+                                ></path>
+                            </svg>
+                            <p className='vote'>{`${data.vote_average} (${data.vote_count})`}</p>
+                        </div>
                         <img
                             src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
                             alt={data.title}
                         />
+                        <p className='popularity'>Popularity: {data.popularity}</p>
                     </div>
                 ))}
             </section>
             <section>
                 {popularSecondRow.map(data => (
-                    <img
-                        key={data.id}
-                        src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-                        alt={data.title}
-                    />
+                    <div key={data.id} onClick={() => onMovieClick(movie)}>
+                        <div className='info'>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="3em"
+                                height="3em"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    fillRule="evenodd"
+                                    d="M12 16.667L5 22l3-8l-6-4.5h7.5L12 2l2.5 7.5H22L16 14l3 8z"
+                                ></path>
+                            </svg>
+                            <p className='vote'>{`${data.vote_average} (${data.vote_count})`}</p>
+                        </div>
+                        <img
+                            src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+                            alt={data.title}
+                        />
+                        <p className='popularity'>Popularity: {data.popularity}</p>
+                    </div>
                 ))}
             </section>
             <section>
                 {popularThirdRow.map(data => (
-                    <img
-                        key={data.id}
-                        src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-                        alt={data.title}
-                    />
+                    <div key={data.id} onClick={() => onMovieClick(movie)}>
+                        <div className='info'>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="3em"
+                                height="3em"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    fillRule="evenodd"
+                                    d="M12 16.667L5 22l3-8l-6-4.5h7.5L12 2l2.5 7.5H22L16 14l3 8z"
+                                ></path>
+                            </svg>
+                            <p className='vote'>{`${data.vote_average} (${data.vote_count})`}</p>
+                        </div>
+                        <img
+                            src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+                            alt={data.title}
+                        />
+                        <p className='popularity'>Popularity: {data.popularity}</p>
+                    </div>
                 ))}
             </section>
             <section>
                 {popularFourthRow.map(data => (
-                    <img
-                        key={data.id}
-                        src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-                        alt={data.title}
-                    />
+                    <div key={data.id} onClick={() => onMovieClick(movie)}>
+                        <div className='info'>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="3em"
+                                height="3em"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    fillRule="evenodd"
+                                    d="M12 16.667L5 22l3-8l-6-4.5h7.5L12 2l2.5 7.5H22L16 14l3 8z"
+                                ></path>
+                            </svg>
+                            <p className='vote'>{`${data.vote_average} (${data.vote_count})`}</p>
+                        </div>
+                        <img
+                            src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+                            alt={data.title}
+                        />
+                        <p className='popularity'>Popularity: {data.popularity}</p>
+                    </div>
+                ))}
+            </section>
+            <section>
+                {popularFifthRow.map(data => (
+                    <div key={data.id} onClick={() => onMovieClick(movie)}>
+                        <div className='info'>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="3em"
+                                height="3em"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    fillRule="evenodd"
+                                    d="M12 16.667L5 22l3-8l-6-4.5h7.5L12 2l2.5 7.5H22L16 14l3 8z"
+                                ></path>
+                            </svg>
+                            <p className='vote'>{`${data.vote_average} (${data.vote_count})`}</p>
+                        </div>
+                        <img
+                            src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+                            alt={data.title}
+                        />
+                        <p className='popularity'>Popularity: {data.popularity}</p>
+                    </div>
                 ))}
             </section>
         </div>
