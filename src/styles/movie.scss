@@ -1,4 +1,4 @@
-$lightBlue: '#348ca2';
+$light: #eeeeee;
 
 section {
     display: flex;
@@ -12,19 +12,18 @@ section {
     number {
         display: inline-block;
     }
-    
 
-    img {
+    .poster {
         width: 12vw;
         border-radius: 20px;
         cursor: pointer;
-        transition: all 100ms ease-in-out;
+        transition: all 0.2s ease-in-out;
         box-sizing: border-box;
     }
 
-    img:hover {
-        border: 5px solid;
-        transform: scale(1.09);
+    .poster:hover {
+        border: 3px solid;
+        transform: scale(1.1);
     }
 
     .title {
@@ -39,21 +38,76 @@ section {
         display: flex;
         align-items: center;
         justify-content: center;
-        
+
         .vote {
             top: 10px;
             position: relative;
             text-align: center;
             font-size: 25px;
         }
-    
+
         svg {
             top: 10px;
             position: relative;
             width: 30px;
             margin-right: 5px;
         }
-    } 
+    }
+}
+
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(1, 1, 1, 0.9);
+    z-index: 9;
+    transition: all 0.2s ease-in-out;
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translate3d(0,40px,0)
+        }
+    
+        to {
+            transform: translate3d(0,0,0);
+            opacity: 1
+        }
+    }
+
+    .movie-info {
+        display: block;
+        justify-content: center;
+        margin: 0 15vw;
+        margin-top: 20vh;
+        height: 20%;
+        animation: fadeInUp 1s;
+
+        h2 {
+            font-size: 30px;
+            text-decoration: underline;
+            text-underline-offset: 10px;
+            color: $light;
+        }
+
+        .text-info {
+            color: $light;
+            font-size: 18px;
+        }
+
+        .poster-info {
+            width: 12vw;
+            border-radius: 20px;
+        }
+
+        .backdrop-info {
+            width: 20vw;
+            border-radius: 20px;
+            margin-top: 15px;
+        }
+    }
 }
 
 .loader-wrapper {

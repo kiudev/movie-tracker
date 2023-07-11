@@ -64,6 +64,7 @@ const TopRatedMovie = () => {
                             <p className="vote">{`${data.vote_average} (${data.vote_count})`}</p>
                         </div>
                         <img
+                            className="poster"
                             src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
                             alt={data.title}
                         />
@@ -89,6 +90,7 @@ const TopRatedMovie = () => {
                             <p className="vote">{`${data.vote_average} (${data.vote_count})`}</p>
                         </div>
                         <img
+                            className="poster"
                             src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
                             alt={data.title}
                         />
@@ -114,6 +116,7 @@ const TopRatedMovie = () => {
                             <p className="vote">{`${data.vote_average} (${data.vote_count})`}</p>
                         </div>
                         <img
+                            className="poster"
                             src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
                             alt={data.title}
                         />
@@ -139,6 +142,7 @@ const TopRatedMovie = () => {
                             <p className="vote">{`${data.vote_average} (${data.vote_count})`}</p>
                         </div>
                         <img
+                            className="poster"
                             src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
                             alt={data.title}
                         />
@@ -164,6 +168,7 @@ const TopRatedMovie = () => {
                             <p className="vote">{`${data.vote_average} (${data.vote_count})`}</p>
                         </div>
                         <img
+                            className="poster"
                             src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
                             alt={data.title}
                         />

@@ -79,8 +79,12 @@ function App() {
                 style={{
                     backgroundColor,
                     color: textColor,
-                    minHeight: '100wh',
-                    minWidth: 'calc(100vw - 15px)',
+                    position: 'absolute',
+                    minHeight: '100%',
+                    minWidth: '100%',
+                    top: '0',
+                    left: '0',
+                    zIndex: '9'
                 }}
             >
                 <header>
