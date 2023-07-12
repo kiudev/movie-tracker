@@ -84,7 +84,7 @@ function App() {
                     minWidth: '100%',
                     top: '0',
                     left: '0',
-                    zIndex: '9'
+                    zIndex: '9',
                 }}
             >
                 <header>
@@ -102,7 +102,7 @@ function App() {
                                                 : textColor,
                                             transition: 'all 0.2s ease-in-out',
                                             padding: '5px',
-                                            borderRadius: '5px'
+                                            borderRadius: '5px',
                                         }}
                                         className="value"
                                         onMouseEnter={handlePopularE}
@@ -124,7 +124,7 @@ function App() {
                                                 : textColor,
                                             transition: 'all 0.2s ease-in-out',
                                             padding: '5px',
-                                            borderRadius: '5px'
+                                            borderRadius: '5px',
                                         }}
                                         className="value"
                                         onMouseEnter={handleCurrentE}
@@ -146,7 +146,7 @@ function App() {
                                                 : textColor,
                                             transition: 'all 0.2s ease-in-out',
                                             padding: '5px',
-                                            borderRadius: '5px'
+                                            borderRadius: '5px',
                                         }}
                                         className="value"
                                         onMouseEnter={handleRatedE}
@@ -168,7 +168,7 @@ function App() {
                                                 : textColor,
                                             transition: 'all 0.2s ease-in-out',
                                             padding: '5px',
-                                            borderRadius: '5px'
+                                            borderRadius: '5px',
                                         }}
                                         className="value"
                                         onMouseEnter={handleUpcomingE}

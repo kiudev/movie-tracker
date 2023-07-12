@@ -2,6 +2,7 @@ $light: #eeeeee;
 
 section {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 5rem;
     margin-top: 2ch;
@@ -14,15 +15,15 @@ section {
     }
 
     .poster {
-        width: 12vw;
+        width: 250px;
         border-radius: 20px;
         cursor: pointer;
-        transition: all 0.2s ease-in-out;
+        transition: transform 0.2s ease-in-out;
         box-sizing: border-box;
     }
 
     .poster:hover {
-        border: 3px solid;
+        border: 2px solid;
         transform: scale(1.1);
     }
 
@@ -68,33 +69,33 @@ section {
     @keyframes fadeInUp {
         from {
             opacity: 0;
-            transform: translate3d(0,40px,0)
+            transform: translate3d(0, 40px, 0);
         }
-    
+
         to {
-            transform: translate3d(0,0,0);
-            opacity: 1
+            transform: translate3d(0, 0, 0);
+            opacity: 1;
         }
     }
 
     .movie-info {
         display: block;
-        justify-content: center;
-        margin: 0 15vw;
-        margin-top: 20vh;
-        height: 20%;
+        margin: 0 25vw;
+        margin-top: 13vh;
         animation: fadeInUp 1s;
 
         h2 {
-            font-size: 30px;
+            font-size: 35px;
             text-decoration: underline;
             text-underline-offset: 10px;
             color: $light;
+            margin-bottom: 0px;
         }
 
         .text-info {
             color: $light;
             font-size: 18px;
+            text-align: left;
         }
 
         .poster-info {
@@ -106,6 +107,10 @@ section {
             width: 20vw;
             border-radius: 20px;
             margin-top: 15px;
+        }
+
+        .footer-info {
+            margin-top: -60px;
         }
     }
 }
