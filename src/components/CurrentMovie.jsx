@@ -22,7 +22,7 @@ const CurrentMovie = () => {
         }
         setTimeout(() => {
             setIsLoading(false)
-        }, 200)
+        }, 0)
         fetchMovies()
     }, [])
 

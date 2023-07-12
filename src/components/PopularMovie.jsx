@@ -24,7 +24,7 @@ const PopularMovie = () => {
         }
         setTimeout(() => {
             setIsLoading(false)
-        }, 200)
+        }, 0)
         fetchMovies()
     }, [])
 
