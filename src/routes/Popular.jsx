@@ -1,5 +1,12 @@
+// Hooks
 import { useState, useEffect } from 'react'
+
+import { motion } from 'framer-motion'
+
+// Components
 import Movie from '../components/Movie'
+
+// Styles
 import '../styles/movie.scss'
 
 const Popular = () => {
@@ -53,66 +60,75 @@ const Popular = () => {
 
     return (
         <>
-            <section>
-                {popularFirstRow.map(data => (
-                    <div key={data.id}>
-                        <Movie
-                            data={data}
-                            selectedMovie={selectedMovie}
-                            handleRowClick={handleRowClick}
-                            handleBackdropClick={handleBackdropClick}
-                        />
-                    </div>
-                ))}
-            </section>
-            <section>
-                {popularSecondRow.map(data => (
-                    <div key={data.id}>
-                        <Movie
-                            data={data}
-                            selectedMovie={selectedMovie}
-                            handleRowClick={handleRowClick}
-                            handleBackdropClick={handleBackdropClick}
-                        />
-                    </div>
-                ))}
-            </section>
-            <section>
-                {popularThirdRow.map(data => (
-                    <div key={data.id}>
-                        <Movie
-                            data={data}
-                            selectedMovie={selectedMovie}
-                            handleRowClick={handleRowClick}
-                            handleBackdropClick={handleBackdropClick}
-                        />
-                    </div>
-                ))}
-            </section>
-            <section>
-                {popularFourthRow.map(data => (
-                    <div key={data.id}>
-                        <Movie
-                            data={data}
-                            selectedMovie={selectedMovie}
-                            handleRowClick={handleRowClick}
-                            handleBackdropClick={handleBackdropClick}
-                        />
-                    </div>
-                ))}
-            </section>
-            <section>
-                {popularFifthRow.map(data => (
-                    <div key={data.id}>
-                        <Movie
-                            data={data}
-                            selectedMovie={selectedMovie}
-                            handleRowClick={handleRowClick}
-                            handleBackdropClick={handleBackdropClick}
-                        />
-                    </div>
-                ))}
-            </section>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                    duration: 2,
+                    ease: [0, 0.71, 0.2, 1],
+                }}
+            >
+                <section>
+                    {popularFirstRow.map(data => (
+                        <div key={data.id}>
+                            <Movie
+                                data={data}
+                                selectedMovie={selectedMovie}
+                                handleRowClick={handleRowClick}
+                                handleBackdropClick={handleBackdropClick}
+                            />
+                        </div>
+                    ))}
+                </section>
+                <section>
+                    {popularSecondRow.map(data => (
+                        <div key={data.id}>
+                            <Movie
+                                data={data}
+                                selectedMovie={selectedMovie}
+                                handleRowClick={handleRowClick}
+                                handleBackdropClick={handleBackdropClick}
+                            />
+                        </div>
+                    ))}
+                </section>
+                <section>
+                    {popularThirdRow.map(data => (
+                        <div key={data.id}>
+                            <Movie
+                                data={data}
+                                selectedMovie={selectedMovie}
+                                handleRowClick={handleRowClick}
+                                handleBackdropClick={handleBackdropClick}
+                            />
+                        </div>
+                    ))}
+                </section>
+                <section>
+                    {popularFourthRow.map(data => (
+                        <div key={data.id}>
+                            <Movie
+                                data={data}
+                                selectedMovie={selectedMovie}
+                                handleRowClick={handleRowClick}
+                                handleBackdropClick={handleBackdropClick}
+                            />
+                        </div>
+                    ))}
+                </section>
+                <section>
+                    {popularFifthRow.map(data => (
+                        <div key={data.id}>
+                            <Movie
+                                data={data}
+                                selectedMovie={selectedMovie}
+                                handleRowClick={handleRowClick}
+                                handleBackdropClick={handleBackdropClick}
+                            />
+                        </div>
+                    ))}
+                </section>
+            </motion.div>
         </>
     )
 }

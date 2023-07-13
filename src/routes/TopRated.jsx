@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import Movie from '../components/Movie'
 import '../styles/movie.scss'
 
@@ -53,66 +54,75 @@ const TopRated = () => {
 
     return (
         <>
-            <section>
-                {ratedFirstRow.map(data => (
-                    <div key={data.id}>
-                        <Movie
-                            data={data}
-                            selectedMovie={selectedMovie}
-                            handleRowClick={handleRowClick}
-                            handleBackdropClick={handleBackdropClick}
-                        />
-                    </div>
-                ))}
-            </section>
-            <section>
-                {ratedSecondRow.map(data => (
-                    <div key={data.id}>
-                        <Movie
-                            data={data}
-                            selectedMovie={selectedMovie}
-                            handleRowClick={handleRowClick}
-                            handleBackdropClick={handleBackdropClick}
-                        />
-                    </div>
-                ))}
-            </section>
-            <section>
-                {ratedThirdRow.map(data => (
-                    <div key={data.id}>
-                        <Movie
-                            data={data}
-                            selectedMovie={selectedMovie}
-                            handleRowClick={handleRowClick}
-                            handleBackdropClick={handleBackdropClick}
-                        />
-                    </div>
-                ))}
-            </section>
-            <section>
-                {ratedFourthRow.map(data => (
-                    <div key={data.id}>
-                        <Movie
-                            data={data}
-                            selectedMovie={selectedMovie}
-                            handleRowClick={handleRowClick}
-                            handleBackdropClick={handleBackdropClick}
-                        />
-                    </div>
-                ))}
-            </section>
-            <section>
-                {ratedFifthRow.map(data => (
-                    <div key={data.id}>
-                        <Movie
-                            data={data}
-                            selectedMovie={selectedMovie}
-                            handleRowClick={handleRowClick}
-                            handleBackdropClick={handleBackdropClick}
-                        />
-                    </div>
-                ))}
-            </section>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                    duration: 2,
+                    ease: [0, 0.71, 0.2, 1],
+                }}
+            >
+                <section>
+                    {ratedFirstRow.map(data => (
+                        <div key={data.id}>
+                            <Movie
+                                data={data}
+                                selectedMovie={selectedMovie}
+                                handleRowClick={handleRowClick}
+                                handleBackdropClick={handleBackdropClick}
+                            />
+                        </div>
+                    ))}
+                </section>
+                <section>
+                    {ratedSecondRow.map(data => (
+                        <div key={data.id}>
+                            <Movie
+                                data={data}
+                                selectedMovie={selectedMovie}
+                                handleRowClick={handleRowClick}
+                                handleBackdropClick={handleBackdropClick}
+                            />
+                        </div>
+                    ))}
+                </section>
+                <section>
+                    {ratedThirdRow.map(data => (
+                        <div key={data.id}>
+                            <Movie
+                                data={data}
+                                selectedMovie={selectedMovie}
+                                handleRowClick={handleRowClick}
+                                handleBackdropClick={handleBackdropClick}
+                            />
+                        </div>
+                    ))}
+                </section>
+                <section>
+                    {ratedFourthRow.map(data => (
+                        <div key={data.id}>
+                            <Movie
+                                data={data}
+                                selectedMovie={selectedMovie}
+                                handleRowClick={handleRowClick}
+                                handleBackdropClick={handleBackdropClick}
+                            />
+                        </div>
+                    ))}
+                </section>
+                <section>
+                    {ratedFifthRow.map(data => (
+                        <div key={data.id}>
+                            <Movie
+                                data={data}
+                                selectedMovie={selectedMovie}
+                                handleRowClick={handleRowClick}
+                                handleBackdropClick={handleBackdropClick}
+                            />
+                        </div>
+                    ))}
+                </section>
+            </motion.div>
         </>
     )
 }

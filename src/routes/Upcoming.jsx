@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
 import Movie from '../components/Movie'
 import '../styles/movie.scss'
 
@@ -10,8 +11,8 @@ const Upcoming = () => {
     useEffect(() => {
         const fetchMovies = async () => {
             const apiKey = '72201f7f034f07fc527ec840cbc0ebd6'
-            const pages = ['page=1', 'page=2', 'page=3', 'page=4', 'page=5']
-            const apiUrl = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&${pages[0]}`
+            const pages = 'page=1'
+            const apiUrl = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&${pages}`
 
             try {
                 const response = await fetch(apiUrl)
@@ -52,66 +53,75 @@ const Upcoming = () => {
     }
     return (
         <>
-            <section>
-                {upcomingFirstRow.map(data => (
-                    <div key={data.id}>
-                        <Movie
-                            data={data}
-                            selectedMovie={selectedMovie}
-                            handleRowClick={handleRowClick}
-                            handleBackdropClick={handleBackdropClick}
-                        />
-                    </div>
-                ))}
-            </section>
-            <section>
-                {upcomingSecondRow.map(data => (
-                    <div key={data.id}>
-                        <Movie
-                            data={data}
-                            selectedMovie={selectedMovie}
-                            handleRowClick={handleRowClick}
-                            handleBackdropClick={handleBackdropClick}
-                        />
-                    </div>
-                ))}
-            </section>
-            <section>
-                {upcomingThirdRow.map(data => (
-                    <div key={data.id}>
-                        <Movie
-                            data={data}
-                            selectedMovie={selectedMovie}
-                            handleRowClick={handleRowClick}
-                            handleBackdropClick={handleBackdropClick}
-                        />
-                    </div>
-                ))}
-            </section>
-            <section>
-                {upcomingFourthRow.map(data => (
-                    <div key={data.id}>
-                        <Movie
-                            data={data}
-                            selectedMovie={selectedMovie}
-                            handleRowClick={handleRowClick}
-                            handleBackdropClick={handleBackdropClick}
-                        />
-                    </div>
-                ))}
-            </section>
-            <section>
-                {upcomingFifthRow.map(data => (
-                    <div key={data.id}>
-                        <Movie
-                            data={data}
-                            selectedMovie={selectedMovie}
-                            handleRowClick={handleRowClick}
-                            handleBackdropClick={handleBackdropClick}
-                        />
-                    </div>
-                ))}
-            </section>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                    duration: 2,
+                    ease: [0, 0.71, 0.2, 1],
+                }}
+            >
+                <section>
+                    {upcomingFirstRow.map(data => (
+                        <div key={data.id}>
+                            <Movie
+                                data={data}
+                                selectedMovie={selectedMovie}
+                                handleRowClick={handleRowClick}
+                                handleBackdropClick={handleBackdropClick}
+                            />
+                        </div>
+                    ))}
+                </section>
+                <section>
+                    {upcomingSecondRow.map(data => (
+                        <div key={data.id}>
+                            <Movie
+                                data={data}
+                                selectedMovie={selectedMovie}
+                                handleRowClick={handleRowClick}
+                                handleBackdropClick={handleBackdropClick}
+                            />
+                        </div>
+                    ))}
+                </section>
+                <section>
+                    {upcomingThirdRow.map(data => (
+                        <div key={data.id}>
+                            <Movie
+                                data={data}
+                                selectedMovie={selectedMovie}
+                                handleRowClick={handleRowClick}
+                                handleBackdropClick={handleBackdropClick}
+                            />
+                        </div>
+                    ))}
+                </section>
+                <section>
+                    {upcomingFourthRow.map(data => (
+                        <div key={data.id}>
+                            <Movie
+                                data={data}
+                                selectedMovie={selectedMovie}
+                                handleRowClick={handleRowClick}
+                                handleBackdropClick={handleBackdropClick}
+                            />
+                        </div>
+                    ))}
+                </section>
+                <section>
+                    {upcomingFifthRow.map(data => (
+                        <div key={data.id}>
+                            <Movie
+                                data={data}
+                                selectedMovie={selectedMovie}
+                                handleRowClick={handleRowClick}
+                                handleBackdropClick={handleBackdropClick}
+                            />
+                        </div>
+                    ))}
+                </section>
+            </motion.div>
         </>
     )
 }
