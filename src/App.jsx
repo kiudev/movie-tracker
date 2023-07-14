@@ -223,7 +223,7 @@ function App() {
                     <ToggleSwitch click={changeTheme} />
                 </header>
                 <Routes>
-                    <Route exact path="/" Component={Popular} />
+                    <Route path="/" Component={Popular} />
                     <Route path="/current" Component={Current} />
                     <Route path="/top-rated" Component={TopRated} />
                     <Route path="/upcoming" Component={Upcoming} />
