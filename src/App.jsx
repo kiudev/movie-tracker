@@ -1,5 +1,5 @@
 // React Router
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, NavLink, Routes } from 'react-router-dom'
 
 // Routes
 import Popular from './routes/Popular'
@@ -73,8 +73,14 @@ function App() {
     const textColor = isLightMode ? dark : light
     const bgHover = isLightMode ? dark : light
 
+    const [currentPage, setCurrentPage] = useState('')
+
+    const handleItemClick = page => {
+        setCurrentPage(page)
+    }
+
     return (
-        <Router>
+        <BrowserRouter>
             <div
                 style={{
                     backgroundColor,
@@ -91,15 +97,21 @@ function App() {
                     <nav>
                         <ul>
                             <li>
-                                <Link to="/">
+                                <NavLink to="/">
                                     <span
                                         style={{
-                                            backgroundColor: hoverPopular
-                                                ? bgHover
-                                                : '',
-                                            color: hoverPopular
-                                                ? backgroundColor
-                                                : textColor,
+                                            backgroundColor:
+                                                currentPage === '/'
+                                                    ? bgHover
+                                                    : hoverPopular
+                                                    ? bgHover
+                                                    : '',
+                                            color:
+                                                currentPage === '/'
+                                                    ? backgroundColor
+                                                    : hoverPopular
+                                                    ? backgroundColor
+                                                    : textColor,
                                             transition: 'all 0.2s ease-in-out',
                                             padding: '5px',
                                             borderRadius: '5px',
@@ -107,21 +119,28 @@ function App() {
                                         className="value"
                                         onMouseEnter={handlePopularE}
                                         onMouseLeave={handlePopularL}
+                                        onClick={() => handleItemClick('/')}
                                     >
                                         Popular
                                     </span>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link to="/current">
+                                <NavLink to="/current">
                                     <span
                                         style={{
-                                            backgroundColor: hoverCurrent
-                                                ? bgHover
-                                                : '',
-                                            color: hoverCurrent
-                                                ? backgroundColor
-                                                : textColor,
+                                            backgroundColor:
+                                                currentPage === '/current'
+                                                    ? bgHover
+                                                    : hoverCurrent
+                                                    ? bgHover
+                                                    : '',
+                                            color:
+                                                currentPage === '/current'
+                                                    ? backgroundColor
+                                                    : hoverCurrent
+                                                    ? backgroundColor
+                                                    : textColor,
                                             transition: 'all 0.2s ease-in-out',
                                             padding: '5px',
                                             borderRadius: '5px',
@@ -129,21 +148,30 @@ function App() {
                                         className="value"
                                         onMouseEnter={handleCurrentE}
                                         onMouseLeave={handleCurrentL}
+                                        onClick={() =>
+                                            handleItemClick('/current')
+                                        }
                                     >
                                         Current
                                     </span>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link to="/top-rated">
+                                <NavLink to="/top-rated">
                                     <span
                                         style={{
-                                            backgroundColor: hoverRated
-                                                ? bgHover
-                                                : '',
-                                            color: hoverRated
-                                                ? backgroundColor
-                                                : textColor,
+                                            backgroundColor:
+                                                currentPage === '/top-rated'
+                                                    ? bgHover
+                                                    : hoverRated
+                                                    ? bgHover
+                                                    : '',
+                                            color:
+                                                currentPage === '/top-rated'
+                                                    ? backgroundColor
+                                                    : hoverRated
+                                                    ? backgroundColor
+                                                    : textColor,
                                             transition: 'all 0.2s ease-in-out',
                                             padding: '5px',
                                             borderRadius: '5px',
@@ -151,21 +179,30 @@ function App() {
                                         className="value"
                                         onMouseEnter={handleRatedE}
                                         onMouseLeave={handleRatedL}
+                                        onClick={() =>
+                                            handleItemClick('/top-rated')
+                                        }
                                     >
                                         Top Rated
                                     </span>
-                                </Link>
+                                </NavLink>
                             </li>
                             <li>
-                                <Link to="/upcoming">
+                                <NavLink to="/upcoming">
                                     <span
                                         style={{
-                                            backgroundColor: hoverUpcoming
-                                                ? bgHover
-                                                : '',
-                                            color: hoverUpcoming
-                                                ? backgroundColor
-                                                : textColor,
+                                            backgroundColor:
+                                                currentPage === '/upcoming'
+                                                    ? bgHover
+                                                    : hoverUpcoming
+                                                    ? bgHover
+                                                    : '',
+                                            color:
+                                                currentPage === '/upcoming'
+                                                    ? backgroundColor
+                                                    : hoverUpcoming
+                                                    ? backgroundColor
+                                                    : textColor,
                                             transition: 'all 0.2s ease-in-out',
                                             padding: '5px',
                                             borderRadius: '5px',
@@ -173,24 +210,27 @@ function App() {
                                         className="value"
                                         onMouseEnter={handleUpcomingE}
                                         onMouseLeave={handleUpcomingL}
+                                        onClick={() =>
+                                            handleItemClick('/upcoming')
+                                        }
                                     >
                                         Upcoming
                                     </span>
-                                </Link>
+                                </NavLink>
                             </li>
                         </ul>
                     </nav>
                     <ToggleSwitch click={changeTheme} />
                 </header>
                 <Routes>
-                    <Route path="/" Component={Popular} />
+                    <Route exact path="/" Component={Popular} />
                     <Route path="/current" Component={Current} />
                     <Route path="/top-rated" Component={TopRated} />
                     <Route path="/upcoming" Component={Upcoming} />
                 </Routes>
                 <Footer />
             </div>
-        </Router>
+        </BrowserRouter>
     )
 }
 

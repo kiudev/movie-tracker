@@ -1,6 +1,7 @@
 // Hooks
 import { useState, useEffect } from 'react'
 
+// Framer Motion
 import { motion } from 'framer-motion'
 
 // Components
