@@ -101,13 +101,13 @@ function App() {
                                     <span
                                         style={{
                                             backgroundColor:
-                                                currentPage === '/'
+                                                currentPage === 'Popular'
                                                     ? bgHover
                                                     : hoverPopular
                                                     ? bgHover
                                                     : '',
                                             color:
-                                                currentPage === '/'
+                                                currentPage === 'Popular'
                                                     ? backgroundColor
                                                     : hoverPopular
                                                     ? backgroundColor
@@ -119,7 +119,7 @@ function App() {
                                         className="value"
                                         onMouseEnter={handlePopularE}
                                         onMouseLeave={handlePopularL}
-                                        onClick={() => handleItemClick('/')}
+                                        onClick={() => handleItemClick('Popular')}
                                     >
                                         Popular
                                     </span>
@@ -130,13 +130,13 @@ function App() {
                                     <span
                                         style={{
                                             backgroundColor:
-                                                currentPage === '/current'
+                                                currentPage === 'Current'
                                                     ? bgHover
                                                     : hoverCurrent
                                                     ? bgHover
                                                     : '',
                                             color:
-                                                currentPage === '/current'
+                                                currentPage === 'Current'
                                                     ? backgroundColor
                                                     : hoverCurrent
                                                     ? backgroundColor
@@ -149,7 +149,7 @@ function App() {
                                         onMouseEnter={handleCurrentE}
                                         onMouseLeave={handleCurrentL}
                                         onClick={() =>
-                                            handleItemClick('/current')
+                                            handleItemClick('Current')
                                         }
                                     >
                                         Current
@@ -161,13 +161,13 @@ function App() {
                                     <span
                                         style={{
                                             backgroundColor:
-                                                currentPage === '/top-rated'
+                                                currentPage === 'Top Rated'
                                                     ? bgHover
                                                     : hoverRated
                                                     ? bgHover
                                                     : '',
                                             color:
-                                                currentPage === '/top-rated'
+                                                currentPage === 'Top Rated'
                                                     ? backgroundColor
                                                     : hoverRated
                                                     ? backgroundColor
@@ -180,7 +180,7 @@ function App() {
                                         onMouseEnter={handleRatedE}
                                         onMouseLeave={handleRatedL}
                                         onClick={() =>
-                                            handleItemClick('/top-rated')
+                                            handleItemClick('Top Rated')
                                         }
                                     >
                                         Top Rated
@@ -192,13 +192,13 @@ function App() {
                                     <span
                                         style={{
                                             backgroundColor:
-                                                currentPage === '/upcoming'
+                                                currentPage === 'Upcoming'
                                                     ? bgHover
                                                     : hoverUpcoming
                                                     ? bgHover
                                                     : '',
                                             color:
-                                                currentPage === '/upcoming'
+                                                currentPage === 'Upcoming'
                                                     ? backgroundColor
                                                     : hoverUpcoming
                                                     ? backgroundColor
@@ -211,7 +211,7 @@ function App() {
                                         onMouseEnter={handleUpcomingE}
                                         onMouseLeave={handleUpcomingL}
                                         onClick={() =>
-                                            handleItemClick('/upcoming')
+                                            handleItemClick('Upcoming')
                                         }
                                     >
                                         Upcoming
