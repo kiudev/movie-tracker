@@ -32,3 +32,10 @@ nav ul li {
 .value {
     font-size: 30px;
 }
+
+.active {
+    background-color: #348ca2;
+    padding-top: 3.8px;
+    padding-bottom: 3.8px;
+    border-radius: 5px;
+}

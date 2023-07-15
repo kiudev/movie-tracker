@@ -73,7 +73,7 @@ function App() {
     const textColor = isLightMode ? dark : light
     const bgHover = isLightMode ? dark : light
 
-    const [currentPage, setCurrentPage] = useState('Popular')
+    const [currentPage, setCurrentPage] = useState('')
 
     const handleItemClick = page => {
         setCurrentPage(page)
@@ -97,7 +97,7 @@ function App() {
                     <nav>
                         <ul>
                             <li>
-                                <NavLink to="/">
+                                <NavLink to="/" activeClassname="active">
                                     <span
                                         style={{
                                             backgroundColor:
@@ -126,7 +126,7 @@ function App() {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to="/current">
+                                <NavLink to="/current" activeClassname="active">
                                     <span
                                         style={{
                                             backgroundColor:
