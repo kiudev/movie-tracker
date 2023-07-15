@@ -73,7 +73,7 @@ function App() {
     const textColor = isLightMode ? dark : light
     const bgHover = isLightMode ? dark : light
 
-    const [currentPage, setCurrentPage] = useState('')
+    const [currentPage, setCurrentPage] = useState('Popular')
 
     const handleItemClick = page => {
         setCurrentPage(page)
@@ -223,7 +223,7 @@ function App() {
                     <ToggleSwitch click={changeTheme} />
                 </header>
                 <Routes>
-                    <Route path="/" Component={Popular} />
+                    <Route exact path="/" Component={Popular} />
                     <Route path="/current" Component={Current} />
                     <Route path="/top-rated" Component={TopRated} />
                     <Route path="/upcoming" Component={Upcoming} />
