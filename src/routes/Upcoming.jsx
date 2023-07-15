@@ -5,12 +5,14 @@ import '../styles/movie.scss'
 
 const Upcoming = () => {
     const [movie, setMovie] = useState([])
+    const [character, setCharacter] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [selectedMovie, setSelectedMovie] = useState(false)
+    
+    const apiKey = '72201f7f034f07fc527ec840cbc0ebd6'
 
     useEffect(() => {
-        const fetchMovies = async () => {
-            const apiKey = '72201f7f034f07fc527ec840cbc0ebd6'
+        const fetchUpcomingMovies = async () => {
             const pages = 'page=1'
             const apiUrl = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&${pages}`
 
@@ -24,8 +26,21 @@ const Upcoming = () => {
             }
             setIsLoading(false)
         }
-        fetchMovies()
+        fetchUpcomingMovies()
     }, [])
+
+    const fetchMovieDetails = async movie => {
+        const apiMovie = `https://api.themoviedb.org/3/movie/${movie}/credits?api_key=${apiKey}`
+
+        try {
+            const response = await fetch(apiMovie)
+            const data = await response.json()
+            const characterData = data.cast
+            setCharacter(characterData)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     // Rows
     const upcomingFirstRow = movie.slice(0, 4)
@@ -34,8 +49,9 @@ const Upcoming = () => {
     const upcomingFourthRow = movie.slice(12, 16)
     const upcomingFifthRow = movie.slice(16, 20)
 
-    const handleRowClick = movie => {
+    const handleMovieClick = movie => {
         setSelectedMovie(movie)
+        fetchMovieDetails(movie)
     }
 
     const handleBackdropClick = backdrop => {
@@ -67,8 +83,9 @@ const Upcoming = () => {
                             <Movie
                                 data={data}
                                 selectedMovie={selectedMovie}
-                                handleRowClick={handleRowClick}
+                                handleMovieClick={handleMovieClick}
                                 handleBackdropClick={handleBackdropClick}
+                                character={character}
                             />
                         </div>
                     ))}
@@ -79,8 +96,9 @@ const Upcoming = () => {
                             <Movie
                                 data={data}
                                 selectedMovie={selectedMovie}
-                                handleRowClick={handleRowClick}
+                                handleMovieClick={handleMovieClick}
                                 handleBackdropClick={handleBackdropClick}
+                                character={character}
                             />
                         </div>
                     ))}
@@ -91,8 +109,9 @@ const Upcoming = () => {
                             <Movie
                                 data={data}
                                 selectedMovie={selectedMovie}
-                                handleRowClick={handleRowClick}
+                                handleMovieClick={handleMovieClick}
                                 handleBackdropClick={handleBackdropClick}
+                                character={character}
                             />
                         </div>
                     ))}
@@ -103,8 +122,9 @@ const Upcoming = () => {
                             <Movie
                                 data={data}
                                 selectedMovie={selectedMovie}
-                                handleRowClick={handleRowClick}
+                                handleMovieClick={handleMovieClick}
                                 handleBackdropClick={handleBackdropClick}
+                                character={character}
                             />
                         </div>
                     ))}
@@ -115,8 +135,9 @@ const Upcoming = () => {
                             <Movie
                                 data={data}
                                 selectedMovie={selectedMovie}
-                                handleRowClick={handleRowClick}
+                                handleMovieClick={handleMovieClick}
                                 handleBackdropClick={handleBackdropClick}
+                                character={character}
                             />
                         </div>
                     ))}

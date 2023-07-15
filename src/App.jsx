@@ -97,7 +97,7 @@ function App() {
                     <nav>
                         <ul>
                             <li>
-                                <NavLink to="/" activeClassname="active">
+                                <NavLink to="/" activeclassname="active">
                                     <span
                                         style={{
                                             backgroundColor:
@@ -126,7 +126,7 @@ function App() {
                                 </NavLink>
                             </li>
                             <li>
-                                <NavLink to="/current" activeClassname="active">
+                                <NavLink to="/current" activeclassname="active">
                                     <span
                                         style={{
                                             backgroundColor:
