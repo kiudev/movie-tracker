@@ -60,7 +60,7 @@ section {
     position: absolute;
     display: grid;
     place-items: center;
-    bottom: -150px;
+    bottom: -83px;
     right: -30vw;
     width: 45vw;
     height: 70vh;
@@ -68,8 +68,6 @@ section {
     z-index: 9;
     transition: all 0.2s ease-in-out;
     overflow-y: scroll;
-    border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px;
 
     .movie-info {
         display: block;
@@ -103,7 +101,7 @@ section {
     cursor: pointer;
     float: left;
     margin-top: 20px;
-    margin-left: 40px;
+    margin-left: 30px;
     transition: all 0.2s ease;
 }
 
