@@ -79,6 +79,10 @@ function App() {
         setCurrentPage(page)
     }
 
+    const scrollTopClick = () => {
+        window.scrollTo({ top: 0 })
+    }
+
     return (
         <BrowserRouter>
             <div
@@ -95,6 +99,39 @@ function App() {
             >
                 <header>
                     <nav>
+                        <div
+                            className="arrow"
+                            style={{
+                                position: 'fixed',
+                                right: 50,
+                                padding: '5px',
+                                height: '73px',
+                                bottom: 20,
+                                borderRadius: '10px',
+                                transition: 'all 0.2s ease'
+                            }}
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="72"
+                                height="72"
+                                viewBox="0 0 48 48"
+                                onClick={scrollTopClick}
+                            >
+                                <g
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeLinejoin="round"
+                                    strokeWidth="4"
+                                >
+                                    <path d="M24 44c11.046 0 20-8.954 20-20S35.046 4 24 4S4 12.954 4 24s8.954 20 20 20Z" />
+                                    <path
+                                        strokeLinecap="round"
+                                        d="M24 33.5v-18m9 9l-9-9l-9 9"
+                                    />
+                                </g>
+                            </svg>
+                        </div>
                         <ul>
                             <li>
                                 <NavLink to="/" activeclassname="active">
@@ -119,7 +156,9 @@ function App() {
                                         className="value"
                                         onMouseEnter={handlePopularE}
                                         onMouseLeave={handlePopularL}
-                                        onClick={() => handleItemClick('Popular')}
+                                        onClick={() =>
+                                            handleItemClick('Popular')
+                                        }
                                     >
                                         Popular
                                     </span>
@@ -228,6 +267,7 @@ function App() {
                     <Route path="/top-rated" Component={TopRated} />
                     <Route path="/upcoming" Component={Upcoming} />
                 </Routes>
+
                 <Footer />
             </div>
         </BrowserRouter>

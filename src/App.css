@@ -39,3 +39,7 @@ nav ul li {
     padding-bottom: 3.8px;
     border-radius: 5px;
 }
+
+.arrow:hover {
+    background-color: #348ca2;
+}
