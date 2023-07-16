@@ -6,6 +6,7 @@ import Popular from './routes/Popular'
 import Current from './routes/Current'
 import TopRated from './routes/TopRated'
 import Upcoming from './routes/Upcoming'
+import Trending from './components/Trending'
 
 // Components
 import ToggleSwitch from './components/ToggleSwitch'
@@ -91,7 +92,7 @@ function App() {
                     color: textColor,
                     position: 'absolute',
                     minHeight: '100%',
-                    minWidth: '100%',
+                    width: '100%',
                     top: '0',
                     left: '0',
                     zIndex: '9',
@@ -261,14 +262,18 @@ function App() {
                     </nav>
                     <ToggleSwitch click={changeTheme} />
                 </header>
+                <section>
+                    <Trending />
+                </section>
                 <Routes>
                     <Route exact path="/" Component={Popular} />
                     <Route path="/current" Component={Current} />
                     <Route path="/top-rated" Component={TopRated} />
                     <Route path="/upcoming" Component={Upcoming} />
                 </Routes>
-
-                <Footer />
+                <footer>
+                    <Footer />
+                </footer>
             </div>
         </BrowserRouter>
     )

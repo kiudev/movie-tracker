@@ -137,7 +137,7 @@ const Popular = () => {
                         </div>
                     ))}
                 </section>
-                <section>
+                <section className='last-row'>
                     {popularFifthRow.map(data => (
                         <div key={data.id}>
                             <Movie

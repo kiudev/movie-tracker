@@ -6,17 +6,11 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     gap: 5rem;
-    margin-top: 0.5ch;
     text-align: center;
-    margin: 0;
-
-    number {
-        display: inline-block;
-    }
 
     .poster {
         width: 250px;
-        border-radius: 20px;
+        border-radius: 10px;
         cursor: pointer;
         transition: transform 0.2s ease-in-out;
         box-sizing: border-box;
@@ -87,10 +81,10 @@ section {
             font-size: 18px;
             text-align: left;
         }
-        
+
         .poster-info {
             width: 500px;
-            border-radius: 20px;
+            border-radius: 10px;
             margin-top: 20px;
             margin-bottom: 20px;
         }
@@ -140,6 +134,26 @@ section {
         width: 150px;
         font-size: 17px;
     }
+}
+
+.trending {
+    display: inline-flex;
+    overflow-x: scroll;
+    flex: 0 0 900px;
+    gap: 40px;
+
+    .trending-ul {
+        list-style: none;
+    }
+
+    .trending-poster {
+        width: 150px;
+        border-radius: 10px;
+    }
+}
+
+.last-row {
+    margin-bottom: 90px;
 }
 
 .loader-wrapper {
