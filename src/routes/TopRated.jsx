@@ -130,7 +130,7 @@ const TopRated = () => {
                         </div>
                     ))}
                 </section>
-                <section>
+                <section className='last-row'>
                     {ratedFifthRow.map(data => (
                         <div key={data.id}>
                             <Movie

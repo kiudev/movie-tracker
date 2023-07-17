@@ -130,7 +130,7 @@ const Current = () => {
                         </div>
                     ))}
                 </section>
-                <section>
+                <section className='last-row'>
                     {currentFifthRow.map(data => (
                         <div key={data.id}>
                             <Movie

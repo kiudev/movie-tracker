@@ -6,7 +6,7 @@ import Popular from './routes/Popular'
 import Current from './routes/Current'
 import TopRated from './routes/TopRated'
 import Upcoming from './routes/Upcoming'
-import Trending from './components/Trending'
+import Trending from './routes/TrendingDay'
 
 // Components
 import ToggleSwitch from './components/ToggleSwitch'
@@ -107,7 +107,7 @@ function App() {
                                 right: 50,
                                 padding: '5px',
                                 height: '73px',
-                                bottom: 20,
+                                bottom: 80,
                                 borderRadius: '10px',
                                 transition: 'all 0.2s ease'
                             }}

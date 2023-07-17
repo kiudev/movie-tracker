@@ -129,7 +129,7 @@ const Upcoming = () => {
                         </div>
                     ))}
                 </section>
-                <section>
+                <section className='last-row'>
                     {upcomingFifthRow.map(data => (
                         <div key={data.id}>
                             <Movie
