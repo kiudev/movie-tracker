@@ -40,9 +40,6 @@ const Trending = () => {
 
     return (
         <>
-            <header style={{ marginLeft: '-180px' }}>
-                <h2>Trending</h2>
-            </header>
             <div ref={slider} className="trending">
                 <section className="arrow-slider">
                     <svg
@@ -88,6 +85,8 @@ const Trending = () => {
                                 src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
                                 alt={data.title}
                             />
+                            <p className='trending-title'>{data.title}</p>
+                            <p>{data.release_date}</p>
                         </div>
                     ))}
                 </div>

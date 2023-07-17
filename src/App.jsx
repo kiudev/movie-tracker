@@ -6,7 +6,7 @@ import Popular from './routes/Popular'
 import Current from './routes/Current'
 import TopRated from './routes/TopRated'
 import Upcoming from './routes/Upcoming'
-import Trending from './routes/TrendingDay'
+import Trending from './components/Trending'
 
 // Components
 import ToggleSwitch from './components/ToggleSwitch'
