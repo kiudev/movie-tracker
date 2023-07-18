@@ -1,5 +1,6 @@
 $light: #eeeeee;
 $light-blue: #348ca2;
+$laptop: (min-width: 1024px) and (max-width: 1600px);
 
 section {
     display: flex;
@@ -15,6 +16,13 @@ section {
         transition: transform 0.2s ease-in-out;
         box-sizing: border-box;
     }
+
+    @media (min-width: 1024px) and (max-width: 1600px) {
+        .poster {
+            width: 200px;
+        }
+    } 
+    
 
     .poster:hover {
         border: 2px solid;
@@ -40,7 +48,12 @@ section {
             text-align: center;
             font-size: 25px;
         }
-
+        
+        @media (min-width: 1024px) and (max-width: 1600px) {
+            .vote {
+                font-size: 20px;
+            }
+        } 
         svg {
             top: 10px;
             position: relative;
@@ -54,22 +67,24 @@ section {
     position: absolute;
     display: grid;
     place-items: center;
-    bottom: -83px;
-    right: -30vw;
-    width: 45vw;
+    bottom: -10vh;
+    right: -26vw;
+    width: 37vw;
     height: 60vh;
     background-color: rgba(1, 1, 1, 0.8);
     z-index: 9;
     transition: all 0.2s ease-in-out;
     overflow-y: scroll;
+    border-radius: 10px;
 
     .movie-info {
         display: block;
-        margin: 5vh 5vw;
+        margin: 5vh 2.5vw;
         justify-content: center;
 
         h2 {
             font-size: 35px;
+            text-align: center;
             text-decoration: underline;
             text-underline-offset: 10px;
             color: $light;
@@ -82,11 +97,27 @@ section {
             text-align: left;
         }
 
+        
         .poster-info {
-            width: 500px;
+            width: 400px;
             border-radius: 10px;
             margin-top: 20px;
             margin-bottom: 20px;
+        }
+
+        @media (min-width: 1024px) and (max-width: 1600px) {
+            h2 {
+                font-size: 28px;
+                margin-top: 30px;
+                margin-left: -30px;
+            }
+    
+            .text-info {
+                font-size: 16px;
+            }
+            .poster-info {
+                width: 300px;
+            }
         }
     }
 }
@@ -134,6 +165,25 @@ section {
         width: 150px;
         font-size: 17px;
     }
+
+    @media (min-width: 1024px) and (max-width: 1600px) {
+        .profile {
+            width: 80px;
+            height: 120px;
+        }
+
+        .character-name {
+            font-size: 14px;
+        }
+
+        .name {
+            font-size: 14px;  
+        }
+
+        aside {
+            height: 110px;
+        }
+    }
 }
 
 .trending {
@@ -161,6 +211,24 @@ section {
 
     .trending-title {
         font-weight: bold;
+        font-size: 16px;
+    }
+
+    .trending-release {
+        font-size: 16px;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1600px) {
+        .trending-poster {
+            width: 120px;
+        }
+        .trending-title {
+            font-size: 14px;
+        }
+
+        .trending-release {
+            font-size: 14px;
+        }
     }
 }
 
@@ -170,7 +238,7 @@ section {
 
 .arrow-slider {
     position: absolute;
-    gap: 776px;
+    gap: 870px;
     place-items: center;
     margin-top: 90px;
 
@@ -180,6 +248,7 @@ section {
         cursor: pointer;
         border-radius: 10px;
         transition: all 0.2s ease;
+        margin-left: -30px;
     }
 
     .left:hover {
@@ -192,6 +261,16 @@ section {
 
     .right:hover {
         @extend .left;
+    }
+
+    @media (min-width: 1024px) and (max-width: 1600px) {
+        .left {
+            height: 60px;
+        }
+
+        .right {
+            @extend .left
+        }
     }
 }
 

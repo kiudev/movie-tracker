@@ -4,12 +4,15 @@
 }
 
 ::-webkit-scrollbar {
-    background-color: #949494;
+    background-color: #424242;
+    border-radius: 10px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: #777777;
-    border-radius: 40px;
+    width: 5px;
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -31,6 +34,12 @@ nav ul li {
 
 .value {
     font-size: 30px;
+}
+
+@media (min-width: 1024px) and (max-width: 1600px) {
+    .value {
+        font-size: 28px;
+    }
 }
 
 .active {

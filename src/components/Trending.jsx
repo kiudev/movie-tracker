@@ -86,7 +86,7 @@ const Trending = () => {
                                 alt={data.title}
                             />
                             <p className='trending-title'>{data.title}</p>
-                            <p>{data.release_date}</p>
+                            <p className='trending-release'>{data.release_date}</p>
                         </div>
                     ))}
                 </div>

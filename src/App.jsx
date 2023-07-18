@@ -104,9 +104,9 @@ function App() {
                             className="arrow"
                             style={{
                                 position: 'fixed',
-                                right: 50,
+                                right: 40,
                                 padding: '5px',
-                                height: '73px',
+                                height: '63px',
                                 bottom: 80,
                                 borderRadius: '10px',
                                 transition: 'all 0.2s ease'
@@ -114,8 +114,8 @@ function App() {
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                width="72"
-                                height="72"
+                                width="62"
+                                height="62"
                                 viewBox="0 0 48 48"
                                 onClick={scrollTopClick}
                             >
