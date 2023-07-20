@@ -92,7 +92,7 @@ function App() {
                     color: textColor,
                     position: 'absolute',
                     minHeight: '100%',
-                    width: '100%',
+                    maxWidth: '100%',
                     top: '0',
                     left: '0',
                     zIndex: '9',
@@ -114,8 +114,8 @@ function App() {
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                width="62"
-                                height="62"
+                                width="52"
+                                height="52"
                                 viewBox="0 0 48 48"
                                 onClick={scrollTopClick}
                             >

@@ -43,11 +43,7 @@ const Current = () => {
     }
 
     // Rows
-    const currentFirstRow = movie.slice(0, 4)
-    const currentSecondRow = movie.slice(4, 8)
-    const currentThirdRow = movie.slice(8, 12)
-    const currentFourthRow = movie.slice(12, 16)
-    const currentFifthRow = movie.slice(16, 20)
+    const currentMovies = movie.slice(0, 20)
 
     const handleMovieClick = movie => {
         setSelectedMovie(movie)
@@ -75,64 +71,12 @@ const Current = () => {
                 animate={{ opacity: 1 }}
                 transition={{
                     duration: 2,
-                    ease: [0, 0.71, 0.2, 1]
-                  }}
+                    ease: [0, 0.71, 0.2, 1],
+                }}
             >
-                <section>
-                    {currentFirstRow.map(data => (
-                        <div key={data.id}>
-                            <Movie
-                                data={data}
-                                selectedMovie={selectedMovie}
-                                handleMovieClick={handleMovieClick}
-                                handleBackdropClick={handleBackdropClick}
-                                character={character}
-                            />
-                        </div>
-                    ))}
-                </section>
-                <section>
-                    {currentSecondRow.map(data => (
-                        <div key={data.id}>
-                            <Movie
-                                data={data}
-                                selectedMovie={selectedMovie}
-                                handleMovieClick={handleMovieClick}
-                                handleBackdropClick={handleBackdropClick}
-                                character={character}
-                            />
-                        </div>
-                    ))}
-                </section>
-                <section>
-                    {currentThirdRow.map(data => (
-                        <div key={data.id}>
-                            <Movie
-                                data={data}
-                                selectedMovie={selectedMovie}
-                                handleMovieClick={handleMovieClick}
-                                handleBackdropClick={handleBackdropClick}
-                                character={character}
-                            />
-                        </div>
-                    ))}
-                </section>
-                <section>
-                    {currentFourthRow.map(data => (
-                        <div key={data.id}>
-                            <Movie
-                                data={data}
-                                selectedMovie={selectedMovie}
-                                handleMovieClick={handleMovieClick}
-                                handleBackdropClick={handleBackdropClick}
-                                character={character}
-                            />
-                        </div>
-                    ))}
-                </section>
-                <section className='last-row'>
-                    {currentFifthRow.map(data => (
-                        <div key={data.id}>
+                <section className="movies">
+                    {currentMovies.map(data => (
+                        <div key={data.id} className="row">
                             <Movie
                                 data={data}
                                 selectedMovie={selectedMovie}

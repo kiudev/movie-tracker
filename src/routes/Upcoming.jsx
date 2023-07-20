@@ -8,7 +8,7 @@ const Upcoming = () => {
     const [character, setCharacter] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [selectedMovie, setSelectedMovie] = useState(false)
-    
+
     const apiKey = '72201f7f034f07fc527ec840cbc0ebd6'
 
     useEffect(() => {
@@ -43,11 +43,7 @@ const Upcoming = () => {
     }
 
     // Rows
-    const upcomingFirstRow = movie.slice(0, 4)
-    const upcomingSecondRow = movie.slice(4, 8)
-    const upcomingThirdRow = movie.slice(8, 12)
-    const upcomingFourthRow = movie.slice(12, 16)
-    const upcomingFifthRow = movie.slice(16, 20)
+    const upcomingMovies = movie.slice(0, 20)
 
     const handleMovieClick = movie => {
         setSelectedMovie(movie)
@@ -77,61 +73,9 @@ const Upcoming = () => {
                     ease: [0, 0.71, 0.2, 1],
                 }}
             >
-                <section>
-                    {upcomingFirstRow.map(data => (
-                        <div key={data.id}>
-                            <Movie
-                                data={data}
-                                selectedMovie={selectedMovie}
-                                handleMovieClick={handleMovieClick}
-                                handleBackdropClick={handleBackdropClick}
-                                character={character}
-                            />
-                        </div>
-                    ))}
-                </section>
-                <section>
-                    {upcomingSecondRow.map(data => (
-                        <div key={data.id}>
-                            <Movie
-                                data={data}
-                                selectedMovie={selectedMovie}
-                                handleMovieClick={handleMovieClick}
-                                handleBackdropClick={handleBackdropClick}
-                                character={character}
-                            />
-                        </div>
-                    ))}
-                </section>
-                <section>
-                    {upcomingThirdRow.map(data => (
-                        <div key={data.id}>
-                            <Movie
-                                data={data}
-                                selectedMovie={selectedMovie}
-                                handleMovieClick={handleMovieClick}
-                                handleBackdropClick={handleBackdropClick}
-                                character={character}
-                            />
-                        </div>
-                    ))}
-                </section>
-                <section>
-                    {upcomingFourthRow.map(data => (
-                        <div key={data.id}>
-                            <Movie
-                                data={data}
-                                selectedMovie={selectedMovie}
-                                handleMovieClick={handleMovieClick}
-                                handleBackdropClick={handleBackdropClick}
-                                character={character}
-                            />
-                        </div>
-                    ))}
-                </section>
-                <section className='last-row'>
-                    {upcomingFifthRow.map(data => (
-                        <div key={data.id}>
+                <section className="movies">
+                    {upcomingMovies.map(data => (
+                        <div key={data.id} className="row">
                             <Movie
                                 data={data}
                                 selectedMovie={selectedMovie}

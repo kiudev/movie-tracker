@@ -1,16 +1,16 @@
 $light: #eeeeee;
 $light-blue: #348ca2;
-$laptop: (min-width: 1024px) and (max-width: 1600px);
 
-section {
+.movies {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 5rem;
+    margin: 0 100px 100px;
     text-align: center;
 
     .poster {
         width: 250px;
+        margin: 0 50px;
         border-radius: 10px;
         cursor: pointer;
         transition: transform 0.2s ease-in-out;
@@ -18,11 +18,14 @@ section {
     }
 
     @media (min-width: 1024px) and (max-width: 1600px) {
+        .movies {
+            margin: 0 100px;
+        }
+
         .poster {
             width: 200px;
         }
-    } 
-    
+    }
 
     .poster:hover {
         border: 2px solid;
@@ -31,10 +34,6 @@ section {
 
     .title {
         font-size: 16px;
-    }
-
-    .popularity {
-        font-size: 20px;
     }
 
     .info {
@@ -48,12 +47,12 @@ section {
             text-align: center;
             font-size: 25px;
         }
-        
+
         @media (min-width: 1024px) and (max-width: 1600px) {
             .vote {
                 font-size: 20px;
             }
-        } 
+        }
         svg {
             top: 10px;
             position: relative;
@@ -64,22 +63,19 @@ section {
 }
 
 .backdrop {
-    position: absolute;
-    display: grid;
-    place-items: center;
-    bottom: -10vh;
-    right: -26vw;
-    width: 37vw;
-    height: 60vh;
-    background-color: rgba(1, 1, 1, 0.8);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(1, 1, 1, 0.9);
     z-index: 9;
     transition: all 0.2s ease-in-out;
     overflow-y: scroll;
-    border-radius: 10px;
 
     .movie-info {
         display: block;
-        margin: 5vh 2.5vw;
+        margin: 50px 200px;
         justify-content: center;
 
         h2 {
@@ -97,27 +93,36 @@ section {
             text-align: left;
         }
 
-        
         .poster-info {
-            width: 400px;
+            float: right;
+            width: 500px;
             border-radius: 10px;
             margin-top: 20px;
             margin-bottom: 20px;
         }
 
-        @media (min-width: 1024px) and (max-width: 1600px) {
+        @media (min-width: 350px) and (max-width: 1600px) {
             h2 {
                 font-size: 28px;
                 margin-top: 30px;
                 margin-left: -30px;
             }
-    
+
             .text-info {
                 font-size: 16px;
             }
             .poster-info {
                 width: 300px;
             }
+        }
+    }
+    
+    @media (min-width: 350px) and (max-width: 1024px) {
+        .movie-info {
+            margin: 50px 50px;
+        }
+        .poster-info {
+            visibility: hidden;
         }
     }
 }
@@ -136,52 +141,58 @@ section {
 
 .characters {
     display: flex;
-    flex-direction: row;
-    margin-top: -40px;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 40px;
+    margin-top: 38px;
 
-    .profile {
-        width: 100px;
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-    }
+    .characters-info {
+        display: flex;
 
-    aside {
-        display: grid;
-        place-items: center;
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
-        background-color: #eeeeee;
-        padding: 5px;
-        color: #181818;
-    }
-
-    .name {
-        font-weight: bold;
-        margin: 0;
-        width: 150px;
-        font-size: 17px;
-    }
-    .character-name {
-        width: 150px;
-        font-size: 17px;
-    }
-
-    @media (min-width: 1024px) and (max-width: 1600px) {
         .profile {
-            width: 80px;
-            height: 120px;
-        }
-
-        .character-name {
-            font-size: 14px;
-        }
-
-        .name {
-            font-size: 14px;  
+            width: 100px;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
         }
 
         aside {
-            height: 110px;
+            display: grid;
+            place-items: center;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background-color: #eeeeee;
+            padding: 5px;
+            color: #181818;
+        }
+
+        .name {
+            font-weight: bold;
+            margin: 0;
+            width: 150px;
+            font-size: 17px;
+        }
+        .character-name {
+            width: 150px;
+            font-size: 17px;
+        }
+
+        @media (min-width: 350px) and (max-width: 1600px) {
+            .profile {
+                width: 80px;
+                height: 120px;
+            }
+
+            .character-name {
+                font-size: 14px;
+            }
+
+            .name {
+                font-size: 14px;
+            }
+
+            aside {
+                height: 110px;
+            }
         }
     }
 }
@@ -189,15 +200,16 @@ section {
 .trending {
     display: flex;
     overflow-x: hidden;
-    flex: 0 0 900px;
+    margin: 0 200px;
     gap: 20px;
     scroll-behavior: smooth;
-
+    
     .trending-info {
         display: flex;
         margin-top: 20px;
         gap: 20px;
         text-align: left;
+        border-bottom: 2px solid;
     }
 
     .trending-ul {
@@ -230,25 +242,37 @@ section {
             font-size: 14px;
         }
     }
-}
 
-.last-row {
-    margin-bottom: 90px;
+    @media (min-width: 350px) and (max-width: 1024px) {
+        .trending-info{
+            border-bottom: none;
+        }
+
+        .trending-poster {
+            display: none;
+        }
+        .trending-title {
+            display: none;
+        }
+
+        .trending-release {
+            display: none;
+        }
+    }
 }
 
 .arrow-slider {
-    position: absolute;
-    gap: 870px;
+    display: flex;
     place-items: center;
-    margin-top: 90px;
 
     .left {
+        position: absolute;
         background-color: rgba(1, 1, 1, 0.4);
         height: 80px;
         cursor: pointer;
         border-radius: 10px;
         transition: all 0.2s ease;
-        margin-left: -30px;
+        left: 170px;
     }
 
     .left:hover {
@@ -256,20 +280,28 @@ section {
     }
 
     .right {
-        @extend .left;
+        position: absolute;
+        background-color: rgba(1, 1, 1, 0.4);
+        height: 80px;
+        cursor: pointer;
+        border-radius: 10px;
+        transition: all 0.2s ease;
+        right: 170px;
     }
 
     .right:hover {
-        @extend .left;
+        transform: scale(1.1);
     }
 
-    @media (min-width: 1024px) and (max-width: 1600px) {
+    
+
+    @media (min-width: 350px) and (max-width: 1024px) {
         .left {
-            height: 60px;
+            display: none;
         }
 
         .right {
-            @extend .left
+            display: none;
         }
     }
 }

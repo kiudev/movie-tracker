@@ -85,8 +85,10 @@ const Trending = () => {
                                 src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
                                 alt={data.title}
                             />
-                            <p className='trending-title'>{data.title}</p>
-                            <p className='trending-release'>{data.release_date}</p>
+                            <p className="trending-title">{data.title}</p>
+                            <p className="trending-release">
+                                {data.release_date}
+                            </p>
                         </div>
                     ))}
                 </div>

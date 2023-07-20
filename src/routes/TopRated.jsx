@@ -10,7 +10,7 @@ const TopRated = () => {
     const [selectedMovie, setSelectedMovie] = useState(false)
 
     const apiKey = '72201f7f034f07fc527ec840cbc0ebd6'
-    
+
     useEffect(() => {
         const fetchTopRatedMovies = async () => {
             const pages = 'page=1'
@@ -43,11 +43,7 @@ const TopRated = () => {
     }
 
     // Rows
-    const ratedFirstRow = movie.slice(0, 4)
-    const ratedSecondRow = movie.slice(4, 8)
-    const ratedThirdRow = movie.slice(8, 12)
-    const ratedFourthRow = movie.slice(12, 16)
-    const ratedFifthRow = movie.slice(16, 20)
+    const topRatedMovies = movie.slice(0, 20)
 
     const handleMovieClick = movie => {
         setSelectedMovie(movie)
@@ -78,61 +74,9 @@ const TopRated = () => {
                     ease: [0, 0.71, 0.2, 1],
                 }}
             >
-                <section>
-                    {ratedFirstRow.map(data => (
-                        <div key={data.id}>
-                            <Movie
-                                data={data}
-                                selectedMovie={selectedMovie}
-                                handleMovieClick={handleMovieClick}
-                                handleBackdropClick={handleBackdropClick}
-                                character={character}
-                            />
-                        </div>
-                    ))}
-                </section>
-                <section>
-                    {ratedSecondRow.map(data => (
-                        <div key={data.id}>
-                            <Movie
-                                data={data}
-                                selectedMovie={selectedMovie}
-                                handleMovieClick={handleMovieClick}
-                                handleBackdropClick={handleBackdropClick}
-                                character={character}
-                            />
-                        </div>
-                    ))}
-                </section>
-                <section>
-                    {ratedThirdRow.map(data => (
-                        <div key={data.id}>
-                            <Movie
-                                data={data}
-                                selectedMovie={selectedMovie}
-                                handleMovieClick={handleMovieClick}
-                                handleBackdropClick={handleBackdropClick}
-                                character={character}
-                            />
-                        </div>
-                    ))}
-                </section>
-                <section>
-                    {ratedFourthRow.map(data => (
-                        <div key={data.id}>
-                            <Movie
-                                data={data}
-                                selectedMovie={selectedMovie}
-                                handleMovieClick={handleMovieClick}
-                                handleBackdropClick={handleBackdropClick}
-                                character={character}
-                            />
-                        </div>
-                    ))}
-                </section>
-                <section className='last-row'>
-                    {ratedFifthRow.map(data => (
-                        <div key={data.id}>
+                <section className="movies">
+                    {topRatedMovies.map(data => (
+                        <div key={data.id} className="row">
                             <Movie
                                 data={data}
                                 selectedMovie={selectedMovie}

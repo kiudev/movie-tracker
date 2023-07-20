@@ -5,7 +5,6 @@
 
 ::-webkit-scrollbar {
     background-color: #424242;
-    border-radius: 10px;
     width: 10px;
 }
 
@@ -24,6 +23,7 @@ header {
     justify-content: center;
     align-items: center;
     margin-top: 10px;
+    flex-wrap: wrap;
 }
 
 nav ul li {
@@ -51,4 +51,24 @@ nav ul li {
 
 .arrow:hover {
     background-color: #348ca2;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .arrow {
+        width: 60px;
+    }
+
+    .arrow:hover {
+        background-color: transparent;
+    }
+}
+
+@media (min-width: 350px) and (max-width: 768px) {
+    .arrow {
+        width: 20px;
+    }
+
+    .arrow:hover {
+        background-color: transparent;
+    }
 }

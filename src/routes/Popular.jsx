@@ -50,11 +50,8 @@ const Popular = () => {
     }
     
     // Rows
-    const popularFirstRow = movie.slice(0, 4)
-    const popularSecondRow = movie.slice(4, 8)
-    const popularThirdRow = movie.slice(8, 12)
-    const popularFourthRow = movie.slice(12, 16)
-    const popularFifthRow = movie.slice(16, 20)
+    const popularMovies = movie.slice(0, 20)
+    
 
     const handleMovieClick = (movie) => {
         setSelectedMovie(movie)
@@ -85,61 +82,9 @@ const Popular = () => {
                     ease: [0, 0.71, 0.2, 1],
                 }}
             >
-                <section>
-                    {popularFirstRow.map(data => (
-                        <div key={data.id}>
-                            <Movie
-                                data={data}
-                                selectedMovie={selectedMovie}
-                                handleMovieClick={handleMovieClick}
-                                handleBackdropClick={handleBackdropClick}
-                                character={character}
-                            />
-                        </div>
-                    ))}
-                </section>
-                <section>
-                    {popularSecondRow.map(data => (
-                        <div key={data.id}>
-                            <Movie
-                                data={data}
-                                selectedMovie={selectedMovie}
-                                handleMovieClick={handleMovieClick}
-                                handleBackdropClick={handleBackdropClick}
-                                character={character}
-                            />
-                        </div>
-                    ))}
-                </section>
-                <section>
-                    {popularThirdRow.map(data => (
-                        <div key={data.id}>
-                            <Movie
-                                data={data}
-                                selectedMovie={selectedMovie}
-                                handleMovieClick={handleMovieClick}
-                                handleBackdropClick={handleBackdropClick}
-                                character={character}
-                            />
-                        </div>
-                    ))}
-                </section>
-                <section>
-                    {popularFourthRow.map(data => (
-                        <div key={data.id}>
-                            <Movie
-                                data={data}
-                                selectedMovie={selectedMovie}
-                                handleMovieClick={handleMovieClick}
-                                handleBackdropClick={handleBackdropClick}
-                                character={character}
-                            />
-                        </div>
-                    ))}
-                </section>
-                <section className='last-row'>
-                    {popularFifthRow.map(data => (
-                        <div key={data.id}>
+                <section className='movies'>
+                    {popularMovies.map(data => (
+                        <div key={data.id} className='row'>
                             <Movie
                                 data={data}
                                 selectedMovie={selectedMovie}
