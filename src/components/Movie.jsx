@@ -14,6 +14,7 @@ const Movie = ({
     return (
         <>
             <div className="info">
+                <div className='vote-container'></div>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="3em"
@@ -21,12 +22,13 @@ const Movie = ({
                     viewBox="0 0 24 24"
                 >
                     <path
-                        fill="currentColor"
+                        fill="#eeeeee"
                         fillRule="evenodd"
                         d="M12 16.667L5 22l3-8l-6-4.5h7.5L12 2l2.5 7.5H22L16 14l3 8z"
                     ></path>
                 </svg>
-                <p className="vote">{`${data.vote_average} (${data.vote_count})`}</p>
+                <p className="vote">{`${data.vote_average}`}</p>
+                <p className="vote">{`(${data.vote_count})`}</p>
             </div>
             <img
                 className="poster"

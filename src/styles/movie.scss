@@ -29,7 +29,7 @@ $light-blue: #348ca2;
 
     .poster:hover {
         border: 2px solid;
-        transform: scale(1.1);
+        transform: scale(1.05);
     }
 
     .title {
@@ -41,14 +41,30 @@ $light-blue: #348ca2;
         align-items: center;
         justify-content: center;
 
+        .vote-container {
+            position: absolute;
+            background-color: $light-blue;
+            width: 250px;
+            height: 40px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        
         .vote {
+            padding: 5px;
+            border-radius: 10px;
             top: 10px;
             position: relative;
             text-align: center;
             font-size: 25px;
+            filter: drop-shadow(2px 1px 2px rgba(0, 0, 0));
+            color: $light;
         }
 
         @media (min-width: 1024px) and (max-width: 1600px) {
+            .vote-container {
+                width: 200px;
+            }
             .vote {
                 font-size: 20px;
             }
@@ -58,6 +74,7 @@ $light-blue: #348ca2;
             position: relative;
             width: 30px;
             margin-right: 5px;
+            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0));
         }
     }
 }
@@ -200,7 +217,7 @@ $light-blue: #348ca2;
 .trending {
     display: flex;
     overflow-x: hidden;
-    margin: 0 200px;
+    margin: 0 180px;
     gap: 20px;
     scroll-behavior: smooth;
     
