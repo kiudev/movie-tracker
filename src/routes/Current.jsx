@@ -1,15 +1,23 @@
+// Hooks
 import { useState, useEffect } from 'react'
+
+// Animations
 import { motion } from 'framer-motion'
+
+// Components
 import Movie from '../components/Movie'
+
+// Styles
 import '../styles/movie.scss'
+
+// API Key
+import { Key as apiKey } from '../key'
 
 const Current = () => {
     const [movie, setMovie] = useState([])
     const [character, setCharacter] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [selectedMovie, setSelectedMovie] = useState(false)
-
-    const apiKey = '72201f7f034f07fc527ec840cbc0ebd6'
 
     useEffect(() => {
         const fetchCurrentMovies = async () => {
@@ -42,9 +50,6 @@ const Current = () => {
         }
     }
 
-    // Rows
-    const currentMovies = movie.slice(0, 20)
-
     const handleMovieClick = movie => {
         setSelectedMovie(movie)
         fetchMovieDetails(movie)
@@ -53,6 +58,8 @@ const Current = () => {
     const handleBackdropClick = backdrop => {
         setSelectedMovie(!backdrop)
     }
+
+    const currentMovies = movie.slice(0, 20)
 
     if (isLoading) {
         return (

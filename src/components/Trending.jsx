@@ -1,9 +1,13 @@
+// Hooks
 import { useEffect, useState, useRef } from 'react'
+
+// Styles
 import '../styles/movie.scss'
 
-const Trending = () => {
-    const apiKey = '72201f7f034f07fc527ec840cbc0ebd6'
+// API Key
+import { Key as apiKey } from '../key'
 
+const Trending = () => {
     const [movie, setMovie] = useState([])
 
     useEffect(() => {
@@ -22,10 +26,6 @@ const Trending = () => {
         fetchTrendingMovies()
     }, [])
 
-    const trendingRow = movie.slice(0, 19)
-
-    const slider = useRef(null)
-
     const scrollRight = () => {
         if (slider.current) {
             slider.current.scrollLeft += 500
@@ -37,6 +37,10 @@ const Trending = () => {
             slider.current.scrollLeft -= 500
         }
     }
+
+    const trendingRow = movie.slice(0, 19)
+
+    const slider = useRef(null)
 
     return (
         <>
@@ -96,5 +100,6 @@ const Trending = () => {
         </>
     )
 }
+
 
 export default Trending

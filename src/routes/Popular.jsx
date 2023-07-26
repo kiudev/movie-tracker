@@ -10,13 +10,14 @@ import Movie from '../components/Movie'
 // Styles
 import '../styles/movie.scss'
 
+// API Key
+import { Key as apiKey } from '../key'
+
 const Popular = () => {
     const [movie, setMovie] = useState([])
     const [character, setCharacter] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [selectedMovie, setSelectedMovie] = useState(false)
-    
-    const apiKey = '72201f7f034f07fc527ec840cbc0ebd6'
 
     useEffect(() => {
         const fetchPopularMovies = async () => {
@@ -35,7 +36,7 @@ const Popular = () => {
         }
         fetchPopularMovies()
     }, [])
-    
+
     const fetchMovieDetails = async movie => {
         const apiMovie = `https://api.themoviedb.org/3/movie/${movie}/credits?api_key=${apiKey}`
 
@@ -48,12 +49,8 @@ const Popular = () => {
             console.log(error)
         }
     }
-    
-    // Rows
-    const popularMovies = movie.slice(0, 20)
-    
 
-    const handleMovieClick = (movie) => {
+    const handleMovieClick = movie => {
         setSelectedMovie(movie)
         fetchMovieDetails(movie)
     }
@@ -61,6 +58,8 @@ const Popular = () => {
     const handleBackdropClick = backdrop => {
         setSelectedMovie(!backdrop)
     }
+
+    const popularMovies = movie.slice(0, 20)
 
     if (isLoading) {
         return (
@@ -82,9 +81,9 @@ const Popular = () => {
                     ease: [0, 0.71, 0.2, 1],
                 }}
             >
-                <section className='movies'>
+                <section className="movies">
                     {popularMovies.map(data => (
-                        <div key={data.id} className='row'>
+                        <div key={data.id} className="row">
                             <Movie
                                 data={data}
                                 selectedMovie={selectedMovie}

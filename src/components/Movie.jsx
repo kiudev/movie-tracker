@@ -1,6 +1,15 @@
-import PropTypes from 'prop-types'
+// Animations
 import { motion } from 'framer-motion'
+
+// Prop Types
+import PropTypes from 'prop-types'
+
+// Styles
 import '../styles/movie.scss'
+import 'react-tooltip/dist/react-tooltip.css'
+
+// Tooltip
+import { Tooltip } from 'react-tooltip'
 
 const Movie = ({
     data,
@@ -11,10 +20,30 @@ const Movie = ({
 }) => {
     const characters = character.slice(0, 12)
 
+    const container = {
+        hidden: { opacity: 0, scale: 0 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                duration: 1.5,
+                ease: [0, 0.71, 0.2, 1],
+            },
+        },
+    }
+
+    const charactersInfo = {
+        hidden: { opacity: 0, scale: 1, y: 50 },
+        visible: {
+            opacity: 1,
+            y: 0,
+        },
+    }
+
     return (
         <>
             <div className="info">
-                <div className='vote-container'></div>
+                <div className="vote-container"></div>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="3em"
@@ -31,15 +60,19 @@ const Movie = ({
                 <p className="vote">{`(${data.vote_count})`}</p>
             </div>
             <img
+                data-tooltip-id="my-tooltip"
+                data-tooltip-content={data.title}
+                data-tooltip-place="bottom"
                 className="poster"
                 src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
                 alt={data.title}
                 onClick={() => handleMovieClick(data.id)}
             />
+            <Tooltip id='my-tooltip'/>
             {selectedMovie === data.id && (
                 <section
                     style={{
-                        display: selectedMovie ? 'block' : 'none',
+                        display: selectedMovie ? 'visible' : 'none',
                     }}
                     className="backdrop"
                 >
@@ -70,37 +103,32 @@ const Movie = ({
                                     alt={data.name}
                                 />
                             </div>
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{
-                                    duration: 2,
-                                    ease: [0, 0.71, 0.2, 1],
-                                }}
+                            <motion.ul
+                                className="characters"
+                                variants={container}
+                                initial="hidden"
+                                animate="visible"
                             >
-                                <div className="characters">
-                                    {characters.map(data => (
-                                        <div
-                                            key={data.id}
-                                            className="characters-info"
-                                        >
-                                            <img
-                                                className="profile"
-                                                src={`https://image.tmdb.org/t/p/w500${data.profile_path}`}
-                                                alt={data.name}
-                                            />
-                                            <aside>
-                                                <p className="name">
-                                                    {data.name}
-                                                </p>
-                                                <p className="character-name">
-                                                    {data.character}
-                                                </p>
-                                            </aside>
-                                        </div>
-                                    ))}
-                                </div>
-                            </motion.div>
+                                {characters.map(data => (
+                                    <motion.li
+                                        key={data}
+                                        className="characters-info"
+                                        variants={charactersInfo}
+                                    >
+                                        <img
+                                            className="profile"
+                                            src={`https://image.tmdb.org/t/p/w500${data.profile_path}`}
+                                            alt={data.name}
+                                        />
+                                        <aside>
+                                            <p className="name">{data.name}</p>
+                                            <p className="character-name">
+                                                {data.character}
+                                            </p>
+                                        </aside>
+                                    </motion.li>
+                                ))}
+                            </motion.ul>
                         </section>
                     </div>
                 </section>

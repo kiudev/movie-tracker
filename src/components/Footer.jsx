@@ -1,3 +1,5 @@
+// Styles
+// Styles
 import '../styles/footer.scss'
 
 const Footer = () => {
